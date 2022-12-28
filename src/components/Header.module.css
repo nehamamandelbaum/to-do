@@ -1,3 +1,7 @@
 .header {
-  background-color: blue;
+  background-color: var(--gray-700);
+  display: flex;
+  justify-content: center;
+  color: var(--purple);
+  padding: 4.5rem 0;
 }
