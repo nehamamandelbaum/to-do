@@ -1,0 +1,27 @@
+.newTodoWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: -1.5rem;
+}
+
+.newTodoButton {
+  width: 5.625rem;
+  background-color: var(--blue-dark);
+  border-radius: 8px;
+  border: none;
+}
+
+.newTodoButton:hover {
+  filter: brightness(85%);
+}
+
+.newTodoInput {
+  min-width: 13rem;
+  width: 25%;
+  background-color: var(--gray-500);
+  border: 1px solid var(--gray-700);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-right: 0.5rem;
+  color: var(--gray-300);
+}
