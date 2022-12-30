@@ -1,0 +1,27 @@
+.infoWrapper {
+  display: flex;
+  width: 8.625rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info {
+  color: var(--blue);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.infoPurple {
+  color: var(--purple);
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.infoCounter {
+  color: var(--gray-200);
+  background: var(--gray-400);
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
