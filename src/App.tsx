@@ -6,6 +6,7 @@ import {Info} from "./components/Info";
 import "./global.css";
 
 import styles from "./App.module.css";
+import {Todo} from "./components/Todo";
 
 function App() {
   return (
@@ -17,6 +18,13 @@ function App() {
           <Info info="Tarefas Criadas" count="5" isPurple={false} />
           <Info info="Concluídas" count="2 de 5" isPurple />
         </div>
+
+        <ul>
+          <Todo checked={true} id="1" task="Estilizar essa div!" />
+          <Todo checked={false} id="2" task="Estilizar essa div!" />
+          <Todo checked={true} id="3" task="Estilizar essa div!" />
+          <Todo checked={false} id="4" task="Estilizar essa div!" />
+        </ul>
       </div>
     </div>
   );

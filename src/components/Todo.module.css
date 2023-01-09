@@ -1,0 +1,44 @@
+.todoWrapper {
+  list-style: none;
+  width: 46rem;
+  background: var(--gray-400);
+  margin-bottom: 0.75rem;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.todoWrapper svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--gray-300);
+  cursor: pointer;
+}
+
+.todoButton {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  background: var(--gray-400);
+  border: 2px solid var(--blue);
+}
+
+.todoButtonChecked {
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--purple);
+  border: none;
+  border-radius: 999px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todoButtonChecked svg {
+  color: var(--grey-100);
+  width: 80%;
+  height: 80%;
+}
