@@ -8,7 +8,7 @@ interface TodoProps {
 }
 export function Todo({checked, id, task}: TodoProps) {
   return (
-    <li className={styles.todoWrapper}>
+    <li className={checked ? styles.todoWrapperChecked : styles.todoWrapper}>
       <button
         className={checked ? styles.todoButtonChecked : styles.todoButton}
       >
@@ -16,7 +16,9 @@ export function Todo({checked, id, task}: TodoProps) {
       </button>
       <span className={styles.task}>{task}</span>
 
-      <Trash />
+      <button className={styles.trashButton}>
+        <Trash />
+      </button>
     </li>
   );
 }

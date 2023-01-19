@@ -11,11 +11,19 @@
   font-size: 0.875rem;
 }
 
-.todoWrapper svg {
-  width: 1.5rem;
-  height: 1.5rem;
+.todoWrapperChecked {
+  list-style: none;
+  width: 46rem;
+  background: var(--gray-400);
+  margin-bottom: 0.75rem;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
   color: var(--gray-300);
-  cursor: pointer;
+  text-decoration-line: line-through;
 }
 
 .todoButton {
@@ -41,4 +49,16 @@
   color: var(--grey-100);
   width: 80%;
   height: 80%;
+}
+
+.trashButton {
+  background: transparent;
+  border: none;
+}
+
+.trashButton svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--gray-300);
+  cursor: pointer;
 }

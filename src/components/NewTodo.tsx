@@ -1,17 +1,50 @@
 import {PlusCircle} from "phosphor-react";
+import {FormEvent, useState} from "react";
 import styles from "./NewTodo.module.css";
+import {ChangeEvent} from "react";
+import {v4 as uuidv4} from "uuid";
 
-export function NewTodo() {
+interface Todo {
+  id: string;
+  task: string;
+  checked: boolean;
+}
+
+interface NewTodoProps {
+  handleCreateNewTodo: (todo: Todo) => void;
+}
+
+export function NewTodo({handleCreateNewTodo}: NewTodoProps) {
+  const [newTodoText, setNewTodoText] = useState("");
+
+  function handleCreateNewTodoInput(event: FormEvent) {
+    event.preventDefault();
+
+    setNewTodoText("");
+    let newTodo: Todo = {
+      id: uuidv4(),
+      task: newTodoText,
+      checked: false,
+    };
+    handleCreateNewTodo(newTodo);
+  }
+
+  function handleNewTodoChange(event: ChangeEvent<HTMLInputElement>) {
+    setNewTodoText(event.target.value);
+  }
+
   return (
-    <div className={styles.newTodoWrapper}>
+    <form className={styles.newTodoWrapper} onSubmit={handleCreateNewTodoInput}>
       <input
+        value={newTodoText}
         placeholder="Adicione uma nova tarefa"
         className={styles.newTodoInput}
+        onChange={handleNewTodoChange}
       ></input>
-      <button className={styles.newTodoButton}>
+      <button type="submit" className={styles.newTodoButton}>
         Criar
         <PlusCircle />
       </button>
-    </div>
+    </form>
   );
 }
