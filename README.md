@@ -1,0 +1,19 @@
+# to-do
+An app that manages your to - do list
+
+## How to run this project: 
+1. Clone the repository
+2. Run the command 'npm install' to install dependencies
+3. Run the command 'npm run dev'
+4. Open your browser in the port showing in your terminal
+5. Enjoy! 
+
+Feedbacks and contributions and welcome! 
+
+##Project preview: 
+
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
+
