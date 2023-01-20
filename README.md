@@ -10,7 +10,7 @@ An app that manages your to - do list
 
 Feedbacks and contributions and welcome! 
 
-##Project preview: 
+## Project preview: 
 
 ![alt text](https://github.com/nehamamandelbaum/to-do/blob/main/picture1.png?raw=true)
 
