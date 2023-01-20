@@ -34,5 +34,9 @@
   border-radius: 8px;
   padding: 1rem;
   margin-right: 0.5rem;
+  color: var(--gray-100);
+}
+
+.newTodoInput::placeholder {
   color: var(--gray-300);
 }

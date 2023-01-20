@@ -5,12 +5,14 @@ interface TodoProps {
   checked: boolean;
   id: string;
   task: string;
+  handleCheckTodo: (id: string) => void;
 }
-export function Todo({checked, id, task}: TodoProps) {
+export function Todo({checked, id, task, handleCheckTodo}: TodoProps) {
   return (
     <li className={checked ? styles.todoWrapperChecked : styles.todoWrapper}>
       <button
         className={checked ? styles.todoButtonChecked : styles.todoButton}
+        onClick={() => handleCheckTodo(id)}
       >
         {checked && <Check />}
       </button>

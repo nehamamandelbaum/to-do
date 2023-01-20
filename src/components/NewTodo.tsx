@@ -4,7 +4,7 @@ import styles from "./NewTodo.module.css";
 import {ChangeEvent} from "react";
 import {v4 as uuidv4} from "uuid";
 
-interface Todo {
+export interface Todo {
   id: string;
   task: string;
   checked: boolean;

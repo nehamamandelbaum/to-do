@@ -1,27 +1,34 @@
 import {useState} from "react";
 import {Header} from "./components/Header";
-import {NewTodo} from "./components/NewTodo";
+import {NewTodo, Todo as InterfaceTodo} from "./components/NewTodo";
 import {Info} from "./components/Info";
 
 import "./global.css";
 
 import styles from "./App.module.css";
 import {Todo} from "./components/Todo";
-
+//Todo:
+//Fazer css para lista vazia
+//checar todo -> Fazer usando index
 function App() {
-  interface Todo {
-    id: string;
-    task: string;
-    checked: boolean;
+  const [todos, setTodos] = useState<InterfaceTodo[]>([]);
+
+  function handleCreateNewTodo(todo: InterfaceTodo) {
+    setTodos([...todos, todo]);
   }
 
-  const [todos, setTodos] = useState([
-    {id: "1", task: "Fazer isso funcionar!", checked: false},
-    {id: "2", task: "Fazer a lógica dos todos", checked: true},
-  ]);
+  function handleCheckTodo(id: string) {
+    let newTodos = [...todos];
 
-  function handleCreateNewTodo(todo: Todo) {
-    setTodos([...todos, todo]);
+    let todoToCheckIndex = todos.findIndex((todo) => todo.id === id);
+
+    newTodos[todoToCheckIndex] = {
+      id: id,
+      checked: !todos[todoToCheckIndex].checked,
+      task: todos[todoToCheckIndex].task,
+    };
+
+    setTodos(newTodos);
   }
 
   return (
@@ -40,7 +47,12 @@ function App() {
 
         <ul>
           {todos.map((todo) => (
-            <Todo checked={todo.checked} id={todo.id} task={todo.task} />
+            <Todo
+              checked={todo.checked}
+              id={todo.id}
+              task={todo.task}
+              handleCheckTodo={handleCheckTodo}
+            />
           ))}
         </ul>
       </div>
