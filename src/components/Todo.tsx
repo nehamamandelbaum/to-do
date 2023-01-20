@@ -6,8 +6,15 @@ interface TodoProps {
   id: string;
   task: string;
   handleCheckTodo: (id: string) => void;
+  handleDeleteTodo: (id: string) => void;
 }
-export function Todo({checked, id, task, handleCheckTodo}: TodoProps) {
+export function Todo({
+  checked,
+  id,
+  task,
+  handleCheckTodo,
+  handleDeleteTodo,
+}: TodoProps) {
   return (
     <li className={checked ? styles.todoWrapperChecked : styles.todoWrapper}>
       <button
@@ -18,7 +25,10 @@ export function Todo({checked, id, task, handleCheckTodo}: TodoProps) {
       </button>
       <span className={styles.task}>{task}</span>
 
-      <button className={styles.trashButton}>
+      <button
+        className={styles.trashButton}
+        onClick={() => handleDeleteTodo(id)}
+      >
         <Trash />
       </button>
     </li>

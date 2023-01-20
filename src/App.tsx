@@ -7,6 +7,7 @@ import "./global.css";
 
 import styles from "./App.module.css";
 import {Todo} from "./components/Todo";
+import {EmptyTodos} from "./components/EmptyTodos";
 //Todo:
 //Fazer css para lista vazia
 //checar todo -> Fazer usando index
@@ -31,6 +32,14 @@ function App() {
     setTodos(newTodos);
   }
 
+  function handleDeleteTodo(id: string) {
+    let newTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(newTodos);
+  }
+
+  let completedTasks = todos.filter((todo) => todo.checked).length;
+
+  let countInfo = `${completedTasks} de ${todos.length}`;
   return (
     <div className="App">
       <Header />
@@ -42,18 +51,23 @@ function App() {
             count={`${todos.length}`}
             isPurple={false}
           />
-          <Info info="Concluídas" count="2 de 5" isPurple />
+          <Info info="Concluídas" count={countInfo} isPurple />
         </div>
 
         <ul>
-          {todos.map((todo) => (
-            <Todo
-              checked={todo.checked}
-              id={todo.id}
-              task={todo.task}
-              handleCheckTodo={handleCheckTodo}
-            />
-          ))}
+          {todos.length === 0 ? (
+            <EmptyTodos />
+          ) : (
+            todos.map((todo) => (
+              <Todo
+                checked={todo.checked}
+                id={todo.id}
+                task={todo.task}
+                handleCheckTodo={handleCheckTodo}
+                handleDeleteTodo={handleDeleteTodo}
+              />
+            ))
+          )}
         </ul>
       </div>
     </div>
@@ -61,8 +75,3 @@ function App() {
 }
 
 export default App;
-
-//To do:
-// Criar um componente Info e abastrair os atuais Tasks done e tasks created nesse mesmo componente.
-
-// Criar um componente
