@@ -12,8 +12,8 @@ Feedbacks and contributions and welcome!
 
 ##Project preview: 
 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![alt text](https://github.com/nehamamandelbaum/to-do/blob/main/picture1.png?raw=true)
 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+![alt text](https://github.com/nehamamandelbaum/to-do/blob/main/picture2.png?raw=true)
 
 
