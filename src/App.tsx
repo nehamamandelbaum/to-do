@@ -60,6 +60,7 @@ function App() {
           ) : (
             todos.map((todo) => (
               <Todo
+                key={todo.id}
                 checked={todo.checked}
                 id={todo.id}
                 task={todo.task}

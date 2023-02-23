@@ -16,9 +16,15 @@ export function Todo({
   handleDeleteTodo,
 }: TodoProps) {
   return (
-    <li className={checked ? styles.todoWrapperChecked : styles.todoWrapper}>
+    <li
+      className={`${styles.todoWrapper} ${
+        checked && styles.todoWrapperChecked
+      }`}
+    >
       <button
-        className={checked ? styles.todoButtonChecked : styles.todoButton}
+        className={`${styles.todoButton} ${
+          checked ? styles.todoButtonChecked : styles.todoButtonUnchecked
+        }`}
         onClick={() => handleCheckTodo(id)}
       >
         {checked && <Check />}

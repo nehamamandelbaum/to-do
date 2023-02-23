@@ -6,15 +6,16 @@
 }
 
 .info {
-  color: var(--blue);
   font-weight: 700;
   font-size: 0.875rem;
 }
 
 .infoPurple {
   color: var(--purple);
-  font-weight: 700;
-  font-size: 0.875rem;
+}
+
+.infoBlue {
+  color: var(--blue);
 }
 
 .infoCounter {
